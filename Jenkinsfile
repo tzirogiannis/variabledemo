@@ -1,9 +1,9 @@
 node {
+    datas = readYaml file: 'params/dev/test.yml'
+
     stage('Checkout'){
           checkout scm
        }
-
-    datas = readYaml file: 'params/dev/test.yml'
 
     stage('config variables') {
 	  //  sh 'env > env.txt' 
