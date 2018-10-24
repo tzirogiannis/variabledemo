@@ -7,7 +7,7 @@ node {
     		println i
 	}
 	
-	for (String i : readFile('params\dev\test.txt').split("\r?\n")) {
+	for (String i : readFile('params/dev/test.txt').split("\r?\n")) {
                 println i
         }
             echo " =========== ^^^^^^^^^^^^ Reading config via Python... "
