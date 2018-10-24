@@ -16,7 +16,7 @@ node {
         }
             echo " =========== ^^^^^^^^^^^^ Reading config via Python... "
             //	sh " env.txt"
-	    //	sh "echo ${env.PACKER_OPTIONS}"
+	    sh "echo PACKER_OPTIONS is ${env.PACKER_OPTIONS}"
             echo " =========== ~~~~~~~~~~~~ ============ "
         }
     }
