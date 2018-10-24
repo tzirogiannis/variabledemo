@@ -7,7 +7,7 @@ node {
        }
 
 
-    switch(${params.environment}) {
+    switch(params.environment) {
         case "dev":
             datas = readYaml file: 'params/dev/dev.yml'
         break
