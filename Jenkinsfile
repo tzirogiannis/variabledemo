@@ -1,11 +1,10 @@
 node {
-    properties([parameters([choice(choices: "debug\ntest\ndev",
+    properties([parameters([choice(choices: "dev\ntest\nprod",
         description: '', name: 'environment')]), pipelineTriggers([])])
 
     stage('Checkout'){
           checkout scm
        }
-
 
     switch(params.environment) {
         case "dev":
