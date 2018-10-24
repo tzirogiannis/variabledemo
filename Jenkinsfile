@@ -1,9 +1,5 @@
 node {
-    properties([
-        string(defaultValue: "TEST", description: 'What environment one?', name: 'userFlag')
-        choice(choices: ['DEV', 'TEST'], description: 'What Environment to deploy to?', name: 'environment')
-        ])
-    ])
+    properties([parameters([choice(choices: ['dev', 'test', 'prod'], description: 'choose an environment:', name: 'environment')])])
 
     stage('Checkout'){
           checkout scm
