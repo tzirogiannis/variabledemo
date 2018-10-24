@@ -9,7 +9,7 @@ node {
           checkout scm
        }
 
-    datas = readYaml file: 'params/dev/test.yml'
+    datas = readYaml file: 'params/dev/dev.yml'
 
     stage('config variables') {
     //  sh 'env > env.txt' 
