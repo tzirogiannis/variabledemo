@@ -1,5 +1,5 @@
 node {
-    properties([parameters([choice(choices: ['dev', 'test', 'prod'], description: 'choose an environment:', name: 'environment')])])
+    properties([parameters([choice(choices: ['dev\ntest\nprod'], description: 'choose an environment:', name: 'environment')])])
 
     stage('Checkout'){
           checkout scm
