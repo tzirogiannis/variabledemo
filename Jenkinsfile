@@ -26,7 +26,8 @@ node {
 
 	echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 
-        sh './one.sh'
+        sh 'ls -la'
+	sh './one.sh'
 
     //  sh 'env > env.txt' 
 	//   for (String i : readFile('env.txt').split("\r?\n")) {
