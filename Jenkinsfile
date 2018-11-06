@@ -2,25 +2,27 @@ node {
     properties([parameters([choice(choices: "dev\ntest\nprod",
         description: '', name: 'environment')]), pipelineTriggers([])])
 
+	environment {
+		switch(params.environment) {
+        	case "dev": 
+            		datas = readYaml file: 'params/dev/dev.yml'
+        	break
+        	case "test":
+            		datas = readYaml file: 'params/test/test.yml'
+        	break
+        	case "prod":
+            		datas = readYaml file: 'params/prod/prod.yml'
+        	break
+        	default:
+            		result = "dev"
+        	break
+    		}  
+	}
+
+
     stage('Checkout'){
           checkout scm
        }
-
-    switch(params.environment) {
-        case "dev":
-            datas = readYaml file: 'params/dev/dev.yml'
-        break
-        case "test":
-            datas = readYaml file: 'params/test/test.yml'
-        break
-        case "prod":
-            datas = readYaml file: 'params/prod/prod.yml'
-        break
-        default:
-            result = "dev"
-        break
-    }
-   //  datas = readYaml file: 'params/dev/dev.yml'
 
     stage('config variables') {
 
